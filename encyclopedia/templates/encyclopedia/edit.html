@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+Encyclopedia | Edit {{ title}}
+{% endblock %}
+  {% block body %}
+  <form  method="post">
+    {%csrf_token%}
+    <div class="form-group" style="margin-top: 25px;">
+      <label for="comment">Edit Content:</label>
+      <textarea class="form-control" rows="20" id="comment" name="newcontent" >{{ content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" style="margin-top: 15px;"> Save </button>
+  </form>
+
+  {% endblock %}
